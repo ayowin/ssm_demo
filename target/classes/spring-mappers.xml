@@ -19,7 +19,8 @@
 		<property name="user" value="${db.username}" />
 		<property name="password" value="${db.password}" />
 
-		<!-- c3p0连接池的私有属性 -->
+		<!-- c3p0连接池的私有属性：初始化连接数为10，最小连接数为10，最大连接数为30 -->
+		<property name="initialPoolSize" value="10" />
 		<property name="maxPoolSize" value="30" />
 		<property name="minPoolSize" value="10" />
 		<!-- 关闭连接后不自动commit -->
@@ -46,7 +47,7 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 注入sqlSessionFactory -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-		<!-- 给出需要扫描Mapper接口包 -->
+		<!-- 配置Mapper/Dao接口包，自动实例化Mapper/Dao接口，并加载到spring容器 -->
 		<property name="basePackage" value="com.wz.mappers" />
 	</bean>
 	

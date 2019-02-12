@@ -13,12 +13,13 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- 开启注解模式/驱动，解决一些奇怪的问题，比如：静态资源配置不生效 -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven/>
  
 	<!-- 自动扫描controller包，不使用默认过滤器，即：配置只扫描Controller注解 -->
 	<context:component-scan
 		base-package="com.wz.controllers" use-default-filters="false">
-		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
 	<!-- spring mvc视图解析器 -->

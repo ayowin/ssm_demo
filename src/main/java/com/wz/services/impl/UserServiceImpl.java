@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wz.entities.User;
+import com.wz.log4j.Log;
 import com.wz.mappers.UserMapper;
 import com.wz.services.UserService;
 
@@ -13,31 +14,37 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserMapper userMapper;
 
-    public String selectUserById(int id) {
+    public boolean insert(User user) {
 	
-	User user = userMapper.selectByPrimaryKey(id);
+	int result = userMapper.insert(user);
 	
-	String tmp = "{ ";
-	tmp += "id: ";
-	tmp += user.getId();
-	tmp += "; ";
-	tmp += "username: ";
-	tmp += user.getUsername();
-	tmp += "; ";
-	tmp += "password: ";
-	tmp += user.getPassword();
-	tmp += "; ";
-	tmp += "identity_card: ";
-	tmp += user.getIdentityCard();
-	tmp += "; ";
-	tmp += "phone_number: ";
-	tmp += user.getPhoneNumber();
-	tmp += "; ";
-	tmp += "job: ";
-	tmp += user.getJob();
-	tmp += " }";
-	
-	return tmp;
+	if(result > 0)
+	    return true;
+	else
+	    return false;
     }
 
+    public boolean delete(int id) {
+	
+	int result = userMapper.deleteByPrimaryKey(id);
+	
+	if(result > 0)
+	    return true;
+	else
+	    return false;
+    }
+
+    public boolean update(User user) {
+	
+	int result = userMapper.updateByPrimaryKey(user);
+	
+	if(result > 0)
+	    return true;
+	else
+	    return false;
+    }
+
+    public User selectUserById(int id) {
+	return userMapper.selectByPrimaryKey(id);
+    }
 }
