@@ -57,7 +57,7 @@ public class SpringmvcController {
     }
 
     @ResponseBody
-    @RequestMapping(value="/select",produces="text/plain;charset=UTF-8",method=RequestMethod.GET)
+    @RequestMapping(value="/select",produces="text/plain;charset=UTF-8")
     public String select() {
 
 	try {
