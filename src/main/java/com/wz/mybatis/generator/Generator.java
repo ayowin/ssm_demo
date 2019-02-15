@@ -5,17 +5,19 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
-import com.wz.log4j.Log;
-
 public class Generator {
 
+    private static final Logger logger = (Logger) LogManager.getLogger(Generator.class);
+    
     public static void main(String[] args) throws Exception {
-	Log.d("-------------MybatisGenerator--------------");
+	logger.debug("-------------MybatisGenerator--------------");
 	
 	// 生成POJO类、Mapper、Mapper.xml
 	generator();
@@ -41,10 +43,10 @@ public class Generator {
 	    MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
 	    myBatisGenerator.generate(null);
 	
-	    Log.d("mybatis-generator generate POJO,Mapper,Mapper.xml success.");	
+	    logger.debug("mybatis-generator generate POJO,Mapper,Mapper.xml success.");	
 
 	} catch (Exception e) {
-	    Log.e("mybatis-generator generate POJO,Mapper,Mapper.xml failed.");
+	    logger.error("mybatis-generator generate POJO,Mapper,Mapper.xml failed.");
 	    e.printStackTrace();
 	}
     }

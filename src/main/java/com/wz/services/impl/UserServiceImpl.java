@@ -1,15 +1,18 @@
 package com.wz.services.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wz.entities.User;
-import com.wz.log4j.Log;
 import com.wz.mappers.UserMapper;
 import com.wz.services.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
+    
+    private static final Logger logger = (Logger) LogManager.getLogger(UserServiceImpl.class);
     
     @Autowired
     private UserMapper userMapper;

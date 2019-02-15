@@ -14,7 +14,7 @@
 		<!-- 控制台追加 -->
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 		</Console>
 
 		<!-- 将TRACE级日志，追加到trace.log文件中 -->
@@ -28,7 +28,7 @@
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />
@@ -47,7 +47,7 @@
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />
@@ -66,7 +66,7 @@
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />
@@ -85,7 +85,7 @@
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />
@@ -104,7 +104,7 @@
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />
@@ -121,7 +121,7 @@
 					onMismatch="DENY" />
 			</Filters>
 			<PatternLayout
-				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Method:%method] [Line:%line] - %msg%n" />
 			<Policies>
 				<TimeBasedTriggeringPolicy />
 				<SizeBasedTriggeringPolicy size="10 MB" />

@@ -1,29 +1,34 @@
 package com.wz.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wz.entities.User;
-import com.wz.log4j.Log;
 import com.wz.services.UserService;
 
 @Controller
 public class SpringmvcController {
+    
+    private static final Logger logger = (Logger) LogManager.getLogger(SpringmvcController.class);
 
     @Autowired
     UserService userServiceImpl;
 
     @RequestMapping(value="/springmvc")
     public String springmvc() {
+	logger.debug("spring mvc");
+	
 	return "springmvc";
     }
 
     @ResponseBody
     @RequestMapping(value="/insert")
     public String insert() {
+	logger.debug("insert");
 
 	User user = new User();
 	user.setId(4);
@@ -44,6 +49,7 @@ public class SpringmvcController {
     @ResponseBody
     @RequestMapping(value="/update")
     public String update() {
+	logger.debug("update");
 
 	try {
 	    User user = userServiceImpl.selectUserById(4);
@@ -59,6 +65,7 @@ public class SpringmvcController {
     @ResponseBody
     @RequestMapping(value="/select",produces="text/plain;charset=UTF-8")
     public String select() {
+	logger.debug("select");
 
 	try {
 	    User user = userServiceImpl.selectUserById(4);
@@ -92,7 +99,8 @@ public class SpringmvcController {
     @ResponseBody
     @RequestMapping(value="/delete")
     public String delete() {
-
+	logger.debug("delete");
+	
 	userServiceImpl.delete(4);	    
 	return "delete success";
     }
