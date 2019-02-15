@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN" monitorInterval="300">
+
+	<!-- log4j2从低到高的级别为 ： trace debug info warn error fatal -->
+
+	<!-- 引用属性 -->
+	<properties>
+		<property name="LOG_HOME">D:/logs</property>
+	</properties>
+
+	<!-- Appenders配置 -->
+	<Appenders>
+		<!-- 控制台追加 -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+		</Console>
+
+		<!-- 将TRACE级日志，追加到trace.log文件中 -->
+		<RollingRandomAccessFile name="TraceFile"
+			fileName="${LOG_HOME}/trace.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/trace-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="debug" onMatch="DENY"
+					onMismatch="NEUTRAL" />
+				<ThresholdFilter level="trace" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingRandomAccessFile>
+
+		<!-- 将DEBUG级日志，追加到debug.log文件中 -->
+		<RollingRandomAccessFile name="DebugFile"
+			fileName="${LOG_HOME}/debug.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/debug-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="info" onMatch="DENY"
+					onMismatch="NEUTRAL" />
+				<ThresholdFilter level="debug" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingRandomAccessFile>
+
+		<!-- 将INFO级日志，追加到info.log文件中 -->
+		<RollingRandomAccessFile name="InfoFile"
+			fileName="${LOG_HOME}/info.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="warn" onMatch="DENY"
+					onMismatch="NEUTRAL" />
+				<ThresholdFilter level="info" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingRandomAccessFile>
+
+		<!-- 将WARN级日志，追加到warn.log文件中 -->
+		<RollingRandomAccessFile name="WarnFile"
+			fileName="${LOG_HOME}/warn.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="error" onMatch="DENY"
+					onMismatch="NEUTRAL" />
+				<ThresholdFilter level="warn" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingRandomAccessFile>
+
+		<!-- 将ERROR级日志，追加到error.log文件中 -->
+		<RollingRandomAccessFile name="ErrorFile"
+			fileName="${LOG_HOME}/error.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="fatal" onMatch="DENY"
+					onMismatch="NEUTRAL" />
+				<ThresholdFilter level="error" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingRandomAccessFile>
+
+		<!-- 将FATAL级日志，追加到fatal.log文件中 -->
+		<RollingRandomAccessFile name="FatalFile"
+			fileName="${LOG_HOME}/fatal.log"
+			filePattern="${LOG_HOME}/$${date:yyyy-MM}/fatal-%d{yyyy-MM-dd}-%i.log">
+			<Filters>
+				<ThresholdFilter level="fatal" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+			<PatternLayout
+				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [Thread:%thread] [Class:%logger{36}] [Line:%line] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingRandomAccessFile>
+	</Appenders>
+
+	<!-- Loggers配置 -->
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="TraceFile" />
+			<AppenderRef ref="DebugFile" />
+			<AppenderRef ref="InfoFile" />
+			<AppenderRef ref="WarnFile" />
+			<AppenderRef ref="ErrorFile" />
+			<AppenderRef ref="FatalFile" />
+		</Root>
+	</Loggers>
+
+</Configuration>
