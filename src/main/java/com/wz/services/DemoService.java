@@ -2,7 +2,7 @@ package com.wz.services;
 
 import com.wz.entities.User;
 
-public interface UserService {
+public interface DemoService {
     
     // 增
     boolean insert(User user);

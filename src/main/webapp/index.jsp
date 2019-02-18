@@ -32,6 +32,10 @@
 	<br />
 
 	<a href="delete" style="font-size: 24px;">删：delete</a>
+	
+	<br />
+
+	<a href="FreeMarkerTest" style="font-size: 24px;">FreeMarkerTest</a>
 
 </body>
 </html>

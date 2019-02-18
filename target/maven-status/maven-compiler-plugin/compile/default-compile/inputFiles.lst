@@ -1,6 +1,6 @@
 D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\entities\User.java
 D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\mappers\UserMapper.java
-D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\controllers\SpringmvcController.java
-D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\services\impl\UserServiceImpl.java
-D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\services\UserService.java
+D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\services\impl\DemoServiceImpl.java
 D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\mybatis\generator\Generator.java
+D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\services\DemoService.java
+D:\project\Java\JavaSE\ssm_demo\src\main\java\com\wz\controllers\DemoController.java

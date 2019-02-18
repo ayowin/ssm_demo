@@ -1,7 +1,7 @@
+com\wz\controllers\DemoController.class
 com\wz\mybatis\generator\Generator.class
 META-INF\spring.components
+com\wz\services\DemoService.class
 com\wz\entities\User.class
-com\wz\controllers\SpringmvcController.class
+com\wz\services\impl\DemoServiceImpl.class
 com\wz\mappers\UserMapper.class
-com\wz\services\UserService.class
-com\wz\services\impl\UserServiceImpl.class

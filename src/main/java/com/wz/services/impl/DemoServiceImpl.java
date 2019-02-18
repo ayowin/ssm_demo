@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import com.wz.entities.User;
 import com.wz.mappers.UserMapper;
-import com.wz.services.UserService;
+import com.wz.services.DemoService;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class DemoServiceImpl implements DemoService{
     
-    private static final Logger logger = (Logger) LogManager.getLogger(UserServiceImpl.class);
+    private static final Logger logger = (Logger) LogManager.getLogger(DemoServiceImpl.class);
     
     @Autowired
     private UserMapper userMapper;
