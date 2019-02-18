@@ -1,0 +1,4 @@
+#
+#Mon Feb 18 09:46:19 CST 2019
+com.wz.services.impl.UserServiceImpl=org.springframework.stereotype.Component
+com.wz.controllers.SpringmvcController=org.springframework.stereotype.Component

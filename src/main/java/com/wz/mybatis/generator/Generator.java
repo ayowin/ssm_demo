@@ -19,8 +19,8 @@ public class Generator {
     public static void main(String[] args) throws Exception {
 	logger.debug("-------------MybatisGenerator--------------");
 	
-	// 生成POJO类、Mapper、Mapper.xml
-	generator();
+	// 生成POJO类、Mapper、Mapper.xml  
+	generator();  
     }
 
     // 生成POJO类、Mapper、Mapper.xml
@@ -31,7 +31,8 @@ public class Generator {
 	    boolean overwrite = true;
 	    
 	    // mybatis-generator配置文件路径
-	    URI fileNameURI = MyBatisGenerator.class.getResource("/com/wz/mybatis/generator/generatorConfig.xml").toURI();
+	    URI fileNameURI = MyBatisGenerator.class.getResource("/mybatis-generator-config.xml").toURI();
+	    
 	    File configFile = new File(fileNameURI);
 	    
 	    ConfigurationParser cp = new ConfigurationParser(warnings);

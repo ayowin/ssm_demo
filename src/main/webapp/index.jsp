@@ -21,7 +21,6 @@
 
 	<a href="insert" style="font-size: 24px;">增：insert</a>
 
-
 	<br />
 
 	<a href="update" style="font-size: 24px;">改：update</a>

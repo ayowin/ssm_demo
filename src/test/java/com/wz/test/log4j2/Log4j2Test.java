@@ -2,12 +2,15 @@ package com.wz.test.log4j2;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.junit.Test;
 
-public class Test {
 
-    public static Logger logger = (Logger) LogManager.getLogger(Test.class);
+public class Log4j2Test {
 
-    public static void main(String[] args) {
+    public static Logger logger = (Logger) LogManager.getLogger(Log4j2Test.class);
+    
+    @Test
+    public void log4j2Test() {
 
 	for(int i = 0; i < 1000; i++) {
 	    logger.trace("trace level");
