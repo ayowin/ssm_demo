@@ -13,8 +13,8 @@
 			targetProject="src/main/java" />
 
 		<sqlMapGenerator
-			targetPackage="com.wz.mappers"
-			targetProject="src/main/java" />
+			targetPackage="mappers"
+			targetProject="src/main/resources" />
 
 		<javaClientGenerator
 			targetPackage="com.wz.mappers"

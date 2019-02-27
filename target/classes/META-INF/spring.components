@@ -1,4 +1,0 @@
-#
-#Mon Feb 18 15:59:43 CST 2019
-com.wz.services.impl.DemoServiceImpl=org.springframework.stereotype.Component
-com.wz.controllers.DemoController=org.springframework.stereotype.Component
